@@ -159,26 +159,26 @@ postfix start</code></pre>
 
 </p>a. Create the postfix-in plist:</p>
 
-<pre><code><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-        <key>Label</key>
-        <string>org.postfix.in</string>
-        <key>Program</key>
-        <string>/usr/libexec/postfix/master</string>
-        <key>ProgramArguments</key>
-        <array>
-                <string>postmulti</string>
-                <string>-i</string>
-                <string>postfix.in</string>
-                <string>-p</string>
-                <string>start</string>
-        </array>
-        <key>RunAtLoad</key>
-        <key>KeepAlive</key>
-</dict>
-</plist></code></pre>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+        &lt;key&gt;Label&lt;/key&gt;
+        &lt;string&gt;org.postfix.in&lt;/string&gt;
+        &lt;key&gt;Program&lt;/key&gt;
+        &lt;string&gt;/usr/libexec/postfix/master&lt;/string&gt;
+        &lt;key&gt;ProgramArguments&lt;/key&gt;
+        &lt;array&gt;
+                &lt;string&gt;postmulti&lt;/string&gt;
+                &lt;string&gt;-i&lt;/string&gt;
+                &lt;string&gt;postfix.in&lt;/string&gt;
+                &lt;string&gt;-p&lt;/string&gt;
+                &lt;string&gt;start&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;key&gt;RunAtLoad&lt;/key&gt;
+        &lt;key&gt;KeepAlive&lt;/key&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</code></pre>
 
 <p>Copy this into /Library/LaunchDaemons/ as org.postfix.in.plist</p>
 
@@ -207,7 +207,7 @@ postfix start</code></pre>
 <pre><code>sudo postfix status</code></pre>
 
 
-<p><b>7. (Alternate - deprecated) Configure a LogoutHook
+<p><b>7. (Alternate - deprecated) Configure a LogoutHook</b>
 
 <p>At this time, I have not found a convenient way to call a script on logout. MacOS still provides LoginHooks and LogoutHooks. Develpers have been warned that these are deprecated and may be removed but, at this time are still functional. A clean solution for scripts/commands to be run at logout, shutdown, restart, etc. using launchd has no been documented.</p>
 
